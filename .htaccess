@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^([A-Za-z0-9-\/&_]+)/?$ 404.php [L]
