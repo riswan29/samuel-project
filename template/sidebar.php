@@ -73,7 +73,7 @@
 
 <!-- Heading -->
       <div class="sidebar-heading">
-        DATA SURAT
+        DATA PRODUK
       </div>
 
 

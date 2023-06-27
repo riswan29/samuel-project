@@ -92,27 +92,27 @@
 											$sqledit=mysqli_query($conn, "SELECT * FROM tb_user WHERE id_user='$id'");
 											while($rowe=mysqli_fetch_assoc($sqledit)){
 										?>
-										<input type="hidden" name="id" value="<?= $rowe['id_user'] ?>">    
+										<input type="hidden" name="id" value="<?= $rowe['id_user'] ?>">
 										<div class="form-group">
 											<label class="font-weight-bold">Username</label>
 											<input autocomplete="off" type="text" name="username" required class="form-control" value="<?= $rowe['username'] ?>"/>
 										</div>
-										
+
 										<div class="form-group">
 											<label class="font-weight-bold">Password</label>
 											<input autocomplete="off" type="text" name="password" required class="form-control" value="<?= $rowe['password'] ?>"/>
 										</div>
-										
+
 										<div class="form-group">
 											<label class="font-weight-bold">Nama Lengkap</label>
 											<input autocomplete="off" type="text" name="nama" required class="form-control" value="<?= $rowe['nama'] ?>"/>
 										</div>
-										
+
 										<div class="form-group">
 											<label class="font-weight-bold">Level</label>
 											<select name="level" class="form-control" required>
 												<option hidden value="<?= $rowe['level'] ?>"><?= $rowe['level'] ?></option>
-												<option value="User">User</option>
+												<option value="Staf">Staf</option>
 												<option value="Admin">Admin</option>
 											</select>
 										</div>
@@ -150,22 +150,22 @@
 						<label class="font-weight-bold">Username</label>
 						<input autocomplete="off" type="text" name="username" required class="form-control"/>
 					</div>
-					
+
 					<div class="form-group">
 						<label class="font-weight-bold">Password</label>
 						<input autocomplete="off" type="text" name="password" required class="form-control"/>
 					</div>
-					
+
 					<div class="form-group">
 						<label class="font-weight-bold">Nama Lengkap</label>
 						<input autocomplete="off" type="text" name="nama" required class="form-control"/>
 					</div>
-					
+
 					<div class="form-group">
 						<label class="font-weight-bold">Level</label>
 						<select name="level" class="form-control" required>
 							<option value="">--Pilih Level--</option>
-							<option value="User">User</option>
+							<option value="Staf">Staf</option>
 							<option value="Admin">Admin</option>
 						</select>
 					</div>
