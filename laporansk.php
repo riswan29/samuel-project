@@ -56,6 +56,7 @@
 			die();
 		} else {
 			$query = mysqli_query($conn, "SELECT * FROM tb_suratkeluar WHERE tgl_keluar BETWEEN '$tglaw' AND '$tglak'");
+
 			?>
 <div class="card shadow mb-4">
     <div class="card-header card-header py-3">
@@ -96,7 +97,63 @@
 	<div class="card-footer text-right">
         <a class="btn btn-primary" target="_blank" href="cetaklpsk.php?tglaw=<?=$tglaw?>&tglak=<?=$tglak?>"><i class="fas fa-fw fa-print mr-1"></i> Cetak Laporan</a>
     </div>
+	<?php
+	if (isset($_POST['lihat'])) {
+        $tglaw = $_POST['tglaw'];
+        $tglak = $_POST['tglak'];
+
+        // ...
+
+        // Query untuk mendapatkan data yang diperlukan untuk grafik
+        $chartQuery = mysqli_query($conn, "SELECT tujuan_surat, COUNT(*) AS jumlah FROM tb_suratkeluar WHERE tgl_keluar BETWEEN '$tglaw' AND '$tglak' GROUP BY tujuan_surat ORDER BY tujuan_surat ASC");
+
+        // Menyiapkan data untuk grafik
+        $labels = []; // Menyimpan label tanggal
+        $data = [];   // Menyimpan tujuan_surat surat keluar
+        while ($chartRow = mysqli_fetch_assoc($chartQuery)) {
+            $labels[] = $chartRow['tujuan_surat'];
+            $data[] = $chartRow['tujuan_surat'];
+        }
+    }
+	?>
+	<!-- Tambahkan elemen div untuk menampilkan grafik -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <canvas id="myChart"></canvas>
+    </div>
 </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Menyiapkan data untuk grafik
+    var labels = <?php echo json_encode($labels); ?>;
+    var data = <?php echo json_encode($data); ?>;
+
+    // Membuat grafik menggunakan Chart.js
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Jumlah Surat Keluar',
+                data: data,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+            }
+        }
+    });
+	</script>
 <?php
 		}
 	}
