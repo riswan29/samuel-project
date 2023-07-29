@@ -14,7 +14,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Manajemen surat </title>
+  <title>Manajemen Produk</title>
   <link rel="icon" type="image/x-icon" href="assets/img/pu.png">
 
   <!-- Custom fonts for this template-->

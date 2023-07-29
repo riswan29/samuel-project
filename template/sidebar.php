@@ -10,9 +10,9 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon ">
-          <img src="assets/img/user.png" width="50" height="50">
+          <img src="ccd.jpg" width="50" height="50">
         </div>
-        <div class="sidebar-brand-text mx-3">XXXXXXXXXXX</div>
+        <div class="sidebar-brand-text mx-3">PT Nesva</div>
       </a><br>
 
       <div class="sidebar-heading">
@@ -50,11 +50,7 @@
           <span>Tambah Produk</span></a>
       </li>
 
-	  <li class="nav-item">
-        <a class="nav-link" href="instansi.php">
-          <i class="fas fa-fw fa-university"></i>
-          <span>Data Instansi</span></a>
-      </li>
+	
 
 	  <li class="nav-item">
         <a class="nav-link" href="user.php">
@@ -147,45 +143,6 @@
 
 
 
-            <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-envelope fa-fw"></i>
-                                <!-- Counter - Messages -->
-                                <?php
-                                    $hariini = date('Y-m-d');
-                                    $sqli = mysqli_query($conn, "SELECT * FROM tb_suratmasuk WHERE tgl_surat='$hariini'");
-                                    $ceksqli = mysqli_num_rows($sqli);
-                                ?>
-                                <span class="badge badge-danger badge-counter"><?= $ceksqli ?></span>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header bg-info border border-info">
-                                    Produk Masuk Hari Ini (<?= date('d-m-Y') ?>)
-                                </h6>
-                                <?php
-                                    if($ceksqli>0){
-                                    while($rowm = mysqli_fetch_array($sqli)){
-                                ?>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="font-weight-bold">
-                                        <div class="text-truncate"><?= $rowm['isi_surat'] ?></div>
-                                        <div class="small text-gray-500"><?= $rowm['asal_surat'] ?> - <?= $rowm['no_suratmasuk'] ?></div>
-                                    </div>
-                                </a>
-                                <?php }} else { ?>
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="font-weight-bold text-center">
-                                        <div class="text-truncate">Tidak Ada Surat</div>
-                                    </div>
-                                </a>
-                                <?php } ?>
-                                <a class="dropdown-item text-center small text-gray-500" href="suratmasuk.php">Lihat Semua Surat Masuk</a>
-                            </div>
-                        </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -195,7 +152,7 @@
                 <span class="text-uppercase mr-2 d-none d-lg-inline text-gray-600 small">
 					<?=$_SESSION['user']?>
 				</span>
-                <img class="img-profile rounded-circle" src="assets/img/pu.png">
+                <img class="img-profile rounded-circle" src="ooi.png">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

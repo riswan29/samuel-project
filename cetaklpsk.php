@@ -31,7 +31,7 @@
 <body>
 <div class="container">
         <div class="text-center">
-        <img src="assets/img/soppengg.png" alt="" width="15%" height="130px">
+        <img src="ccd.jpg" alt="" width="15%" height="130px">
             <div class="col-md-1">
 
             </div>

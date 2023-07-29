@@ -77,7 +77,7 @@
                                                             <span aria-hidden="true">×</span>
                                                         </button>
                                                     </div>
-                                                    <div class="modal-body">Pilih "Hapus" untuk menghapus data surat <?= $row['no_suratkeluar'] ?>.</div>
+                                                    <div class="modal-body">Pilih "Hapus" untuk menghapus data Produk <?= $row['no_suratkeluar'] ?>.</div>
                                                     <div class="modal-footer">
                                                         <button class="btn btn-warning" type="button" data-dismiss="modal"><i class="fas fa-fw fa-times mr-1"></i> Batal</button>
                                                         <a href="data/data_sk.php?act=hapus&id=<?php echo $row['id_suratkeluar']; ?>" class="btn btn-danger"><i class="fas fa-fw fa-trash mr-1"></i> Hapus</a>
@@ -110,10 +110,7 @@
 																<input type="hidden" name="id" value="<?= $rowe['id_suratkeluar'] ?>">
 																<input type="hidden" name="filelama" value="<?= $rowe['file_suratkeluar'] ?>" id="">
 
-																<div class="form-group">
-																	<label class="font-weight-bold">Kode Produk</label>
-																	<input autocomplete="off" type="text" name="nosk" required class="form-control" value="<?= $rowe['no_suratkeluar'] ?>"/>
-																</div>
+
 
 																<div class="form-group">
 																	<label class="font-weight-bold">Nama Produk</label>
@@ -125,15 +122,6 @@
 																	<input autocomplete="off" type="text" name="tujuan" required class="form-control" value="<?= $rowe['tujuan_surat'] ?>"/>
 																</div>
 
-                                                                <div class="form-group">
-                                                                        <label class="font-weight-bold">Perihal</label>
-                                                                        <textarea name="perihal" class="form-control" required><?= $rowe['perihal'] ?></textarea>
-                                                                </div>
-
-																<div class="form-group">
-																	<label class="font-weight-bold">Isi Surat</label>
-																	<textarea name="isi_surat" class="form-control" required><?= $rowe['isi_surat'] ?></textarea>
-																</div>
 
                                                                 <div class="form-group">
 																	<label class="font-weight-bold">Kepada</label>
@@ -141,7 +129,7 @@
 																</div>
 
 																<div class="form-group">
-																	<label class="font-weight-bold">File Surat</label>
+																	<label class="font-weight-bold">Foto Produk</label>
 																	<br />
 																	<span class="text-danger">Format: jpg/jpeg/png/docx/pdf (2Mb)</span>
 
@@ -167,14 +155,14 @@
 
 															<div class="col-md-6">
 																<div class="form-group">
-																	<label class="font-weight-bold">Kode Klasifikasi Surat</label>
+																	<label class="font-weight-bold">Kode Produk</label>
 																	<select name="kla" class="form-control">
-																	<option value="">--Pilih Klasifikasi--</option>
+																	<option value="">--Pilih Ukuran--</option>
 																	<?php
 																	$tampil=mysqli_query($conn, "SELECT * FROM tb_klasifikasi");
 																	while($row=mysqli_fetch_assoc($tampil))
 																	{
-																		if ($row[kode_klasifikasi]==$rowe[kode_klasifikasi]) {
+																		if ($row['kode_klasifikasi']==$rowe['kode_klasifikasi']) {
 																			echo "<option value='$row[kode_klasifikasi]' selected>$row[kode_klasifikasi] - $row[judul_klasifikasi]</option>";
 																		} else {
 																			echo "<option value='$row[kode_klasifikasi]'>$row[kode_klasifikasi] - $row[judul_klasifikasi]</option>";
@@ -184,20 +172,13 @@
 																	</select>
 																</div>
 
-
-
-																<div class="form-group">
-																	<label class="font-weight-bold">Tanggal Surat</label>
-																	<input value="<?= $rowe['tgl_surat'] ?>" type="date" name="tglsk" required class="form-control" />
-																</div>
-
 																<div class="form-group">
 																	<label class="font-weight-bold">Tanggal Keluar</label>
 																	<input value="<?= $rowe['tgl_keluar'] ?>" type="date" name="tglk" required class="form-control" />
 																</div>
 
 																<div class="form-group">
-																	<label class="font-weight-bold">Keterangan Surat</label>
+																	<label class="font-weight-bold">Keterangan</label>
 																	<textarea name="ket" class="form-control"><?= $rowe['ket_suratkeluar'] ?></textarea>
 																</div>
 															</div>

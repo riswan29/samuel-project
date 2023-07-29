@@ -39,8 +39,8 @@
             <!-- Outer Row -->
             <div class="row justify-content-center">
                 <div class="col-xl-5 col-lg-5 col-md-9">
-                    <div class="text-white text-center font-weight-bold" style="font-size: 60px;"><img src="assets/img/pu.png" width="100" height="100"></i></div><br>
-                    <h3 class="text-white text-center font-weight-bold">Sistem Informasi Manajemen Surat XXXXXXXX</h3>
+                    <div class="text-white text-center font-weight-bold" style="font-size: 60px;"><img src="ccd.jpg" width="100" height="100"></i></div><br>
+                    <h3 class="text-white text-center font-weight-bold">Sistem Informasi Penjualan Bubuk jahe Menggunakan Php MySQL Di PT Nesva Pematang Raya</h3>
                     <div class="card o-hidden border-0 shadow-lg my-3">
                         <div class="card-body p-0">
                             <!-- Nested Row within Card Body -->

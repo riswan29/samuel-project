@@ -60,7 +60,7 @@
 			?>
 <div class="card shadow mb-4">
     <div class="card-header card-header py-3">
-        <h6 class="m-0 font-weight-bold text-success"><i class="fa fa-table"></i> Data Laporan Surat Keluar <?=$tglaw?> s/d <?=$tglak?></h6>
+        <h6 class="m-0 font-weight-bold text-success"><i class="fa fa-table"></i> Data Laporan Produk keluar <?=$tglaw?> s/d <?=$tglak?></h6>
     </div>
 
 	<div class="card-body">
@@ -68,8 +68,8 @@
 			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 				<thead class="bg-success text-white">
 					<tr align="center">
-						<th>Tujuan Surat</th>
-						<th>Kode Klasifikasi</th>
+						<th>Jumlah Produk</th>
+						<th>Kode produk</th>
 						<th>Nama Produk</th>
 						<th>Tanggal Keluar</th>
 					</tr>
@@ -137,7 +137,7 @@
         data: {
             labels: labels,
             datasets: [{
-                label: 'Jumlah Surat Keluar',
+                label: 'Jumlah Produk Keluar',
                 data: data,
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
